@@ -40,6 +40,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbharomsz = new System.Windows.Forms.ListBox();
             this.btntorol = new System.Windows.Forms.Button();
+            this.btnfajl = new System.Windows.Forms.Button();
+            this.ofdnyit = new System.Windows.Forms.OpenFileDialog();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -155,11 +157,28 @@
             this.btntorol.UseVisualStyleBackColor = true;
             this.btntorol.Click += new System.EventHandler(this.btntorol_Click);
             // 
+            // btnfajl
+            // 
+            this.btnfajl.Location = new System.Drawing.Point(407, 200);
+            this.btnfajl.Name = "btnfajl";
+            this.btnfajl.Size = new System.Drawing.Size(112, 34);
+            this.btnfajl.TabIndex = 12;
+            this.btnfajl.Text = "Fájl";
+            this.btnfajl.UseVisualStyleBackColor = true;
+            this.btnfajl.Click += new System.EventHandler(this.btnfajl_Click);
+            // 
+            // ofdnyit
+            // 
+            this.ofdnyit.FileName = "openFileDialog1";
+            this.ofdnyit.Filter = "TextFiles|*.txt";
+            this.ofdnyit.InitialDirectory = "C:\\Users\\c16TÓTHM\\source\\repos\\gyak\\gyak\\bin\\Debug";
+            // 
             // frfmfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(801, 261);
+            this.Controls.Add(this.btnfajl);
             this.Controls.Add(this.btntorol);
             this.Controls.Add(this.lbharomsz);
             this.Controls.Add(this.panel1);
@@ -191,6 +210,8 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ListBox lbharomsz;
         private System.Windows.Forms.Button btntorol;
+        private System.Windows.Forms.Button btnfajl;
+        private System.Windows.Forms.OpenFileDialog ofdnyit;
     }
 }
 
