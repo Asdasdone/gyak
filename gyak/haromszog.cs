@@ -52,6 +52,14 @@ namespace gyak
             }
             return list;
         }
+        public haromszog(string sor)
+        {
+            string[] asd = sor.Split(';');
+            a =double.Parse( asd[0]);
+            b =double.Parse( asd[1]);
+            c =double.Parse( asd[2]);
+            szerk();
+        }
         public haromszog(double a, double b, double c)
         {
             this.a = a;

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace gyak
 {
@@ -43,7 +44,46 @@ namespace gyak
         private void btnfajl_Click(object sender, EventArgs e)
         {
             lbharomsz.Items.Clear();
-            ofdnyit.ShowDialog();
+            if (ofdnyit.ShowDialog()==DialogResult.OK)
+            {
+                try
+                {
+                    StreamReader ol = new StreamReader(ofdnyit.FileName);
+                    try
+                    {
+                        lbharomsz.Items.Add("Fájl tartalma");
+                        while (!ol.EndOfStream)
+                        {
+                            string sor = ol.ReadLine();
+                            var h = new haromszog(sor);
+                            foreach (var item in h.adatok())
+                            
+                            {
+                                lbharomsz.Items.Add(item);
+                            }
+                        }
+                        ol.Close();
+                        
+
+                    }
+                    catch (Exception ex)
+                    {
+
+                        MessageBox.Show(ex.Message);
+                    }
+                    finally
+                    {
+                        ol.Close();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    
+                }
+            }
+
+
 
         }
 
